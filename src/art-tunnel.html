@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art ⎯ tunnel.</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+
+    <!-- HTML -->
+    <div
+      class="fixed top-0 left-0 w-full h-full z-50 text-neutral-900 flex items-center px-40 max-md:px-20 max-sm:px-10"
+    >
+      <!-- BOUTON BLOOM -->
+      <button
+        id="bloom"
+        class="absolute bottom-10 right-10 z-50 flex items-center gap-2 text-xs z-[0] text-neutral-900"
+      >
+        Effect ON
+      </button>
+    </div>
+
+    <script type="module" src="./art-tunnel.js"></script>
+  </body>
+</html>

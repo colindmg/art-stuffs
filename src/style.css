@@ -30,7 +30,7 @@ body {
 /* Loading bar */
 .loading-bar {
   position: absolute;
-  top: 50%;
+  top: 55%;
   width: 100%;
   height: 2px;
   background: #171717;

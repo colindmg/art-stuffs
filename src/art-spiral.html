@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art ⎯ spiral.</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+
+    <!-- HTML -->
+    <div
+      class="fixed top-0 left-0 w-full h-full z-50 text-neutral-900 flex items-center px-40 max-md:px-20 max-sm:px-10"
+    >
+      <!-- OVERLAY QUI CACHE LA SPIRAL -->
+      <div
+        id="overlay"
+        class="absolute top-0 left-0 w-full h-full z-10 bg-[#f6faf9] pointer-events-none"
+      ></div>
+      <!-- TEXTE -->
+      <div class="relative flex flex-col gap-5 select-none z-50">
+        <h1 class="text-2xl font-semibold flex items-center">
+          <span id="title1">Art</span>
+          <span id="titlebar" class="bg-neutral-900 h-0.5 w-10 mx-1"></span>
+          <span id="title2">spiral.</span>
+        </h1>
+        <div id="artist-list" class="flex flex-col gap-0.5">
+          <div class="artist-item flex opacity-50">
+            <span class="w-[150px]">⎯</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOUTON BLOOM -->
+      <button
+        id="bloom"
+        class="absolute bottom-10 right-10 z-50 flex items-center gap-2 text-xs z-[0] text-neutral-900"
+      >
+        Effect ON
+      </button>
+      <a href="/" class="fixed top-12 left-12 text-lg z-[100]">←</a>
+    </div>
+
+    <script type="module" src="./art-spiral.js"></script>
+  </body>
+</html>

@@ -6,7 +6,7 @@ import { AfterimagePass } from "three/examples/jsm/postprocessing/AfterimagePass
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
-import { artCubeTextures } from "./art-cube-textures";
+import { artCubeTextures } from "./data/art-cube-textures";
 import artcubeFragmentShader from "./shaders/artcube/fragment.glsl";
 import artcubeVertexShader from "./shaders/artcube/vertex.glsl";
 import "./style.css";

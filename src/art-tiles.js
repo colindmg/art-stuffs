@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { AfterimagePass } from "three/examples/jsm/postprocessing/AfterimagePass.js";
@@ -23,7 +24,32 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xf6faf9);
 
 // Loaders
-const textureLoader = new THREE.TextureLoader();
+const loadingBarElement = document.querySelector(".loading-bar");
+const loadingOverlay = document.querySelector(".loading-overlay");
+
+const loadingManager = new THREE.LoadingManager(
+  // Loaded
+  () => {
+    console.log("loaded");
+
+    gsap.delayedCall(0.5, () => {
+      gsap.to(loadingOverlay, {
+        opacity: 0,
+        duration: 1,
+        onComplete: () => {
+          loadingOverlay.style.display = "none";
+        },
+      });
+    });
+  },
+  // Progress
+  (item, loaded, total) => {
+    const progressRatio = loaded / total;
+    console.log(progressRatio);
+    loadingBarElement.style.transform = `scaleX(${progressRatio})`;
+  }
+);
+const textureLoader = new THREE.TextureLoader(loadingManager);
 const gltfLoader = new GLTFLoader();
 
 // Chargement des textures

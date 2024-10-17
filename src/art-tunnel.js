@@ -1,5 +1,5 @@
+import gsap from "gsap";
 import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { AfterimagePass } from "three/examples/jsm/postprocessing/AfterimagePass.js";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
@@ -23,8 +23,33 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xf6faf9);
 
 // Loaders
-const textureLoader = new THREE.TextureLoader();
-const gltfLoader = new GLTFLoader();
+const loadingBarElement = document.querySelector(".loading-bar");
+const loadingOverlay = document.querySelector(".loading-overlay");
+
+const loadingManager = new THREE.LoadingManager(
+  // Loaded
+  () => {
+    console.log("loaded");
+
+    gsap.delayedCall(0.5, () => {
+      gsap.to(loadingOverlay, {
+        opacity: 0,
+        duration: 1,
+        onComplete: () => {
+          loadingOverlay.style.display = "none";
+        },
+      });
+    });
+  },
+  // Progress
+  (item, loaded, total) => {
+    const progressRatio = loaded / total;
+    console.log(progressRatio);
+    loadingBarElement.style.transform = `scaleX(${progressRatio})`;
+  }
+);
+
+const textureLoader = new THREE.TextureLoader(loadingManager);
 
 const texture = textureLoader.load("/textures/texture.webp");
 texture.wrapT = THREE.RepeatWrapping;

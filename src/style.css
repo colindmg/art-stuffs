@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../static/fonts/SpaceGrotesk-Variable.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+  z-index: 0;
+}
+
+.artist-item:hover {
+  opacity: 1;
+}

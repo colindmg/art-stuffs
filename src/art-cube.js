@@ -6,10 +6,10 @@ import { AfterimagePass } from "three/examples/jsm/postprocessing/AfterimagePass
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
-import artpieceFragmentShader from "./shaders/artpiece/fragment.glsl";
-import artpieceVertexShader from "./shaders/artpiece/vertex.glsl";
+import { artCubeTextures } from "./art-cube-textures";
+import artcubeFragmentShader from "./shaders/artcube/fragment.glsl";
+import artcubeVertexShader from "./shaders/artcube/vertex.glsl";
 import "./style.css";
-import { artPiecesTextures } from "./textures";
 
 // GESTION DE LA SCENE THREE.JS
 
@@ -28,7 +28,7 @@ scene.background = new THREE.Color(0xf6faf9);
 
 // Chargement des textures
 let currentSetIndex = 0;
-const images = artPiecesTextures[currentSetIndex];
+const images = artCubeTextures[currentSetIndex];
 
 /**
  * Sizes
@@ -94,8 +94,8 @@ const baseMaterial = new THREE.ShaderMaterial({
   // wireframe: true,
   side: THREE.DoubleSide,
   transparent: true,
-  vertexShader: artpieceVertexShader,
-  fragmentShader: artpieceFragmentShader,
+  vertexShader: artcubeVertexShader,
+  fragmentShader: artcubeFragmentShader,
   uniforms: {
     uTime: { value: 0 },
     uTexture: { value: null },
@@ -207,8 +207,8 @@ tick();
 // GESTION DE L'ANIMATION DES TEXTURES
 // Fonction pour changer les textures des plans
 function advanceTextures() {
-  currentSetIndex = (currentSetIndex + 1) % artPiecesTextures.length;
-  const newTextures = artPiecesTextures[currentSetIndex];
+  currentSetIndex = (currentSetIndex + 1) % artCubeTextures.length;
+  const newTextures = artCubeTextures[currentSetIndex];
   for (let i = 0; i < planes.length; i++) {
     setTimeout(() => {
       planes[i].material.uniforms.uTexture.value = newTextures[i].texture;

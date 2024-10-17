@@ -12,6 +12,7 @@ html,
 body {
   overflow: hidden;
   font-family: "Space Grotesk", sans-serif;
+  background: #f6faf9;
 }
 
 .webgl {

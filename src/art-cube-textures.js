@@ -2,7 +2,7 @@ import * as THREE from "three";
 
 const textureLoader = new THREE.TextureLoader();
 
-const artPiecesTextures = [
+const artCubeTextures = [
   [
     {
       texture: textureLoader.load("/textures/test1.webp"),
@@ -105,10 +105,10 @@ const artPiecesTextures = [
   ],
 ];
 
-artPiecesTextures.forEach((list) => {
+artCubeTextures.forEach((list) => {
   list.forEach((image) => {
     image.texture.encoding = THREE.sRGBEncoding;
   });
 });
 
-export { artPiecesTextures };
+export { artCubeTextures };

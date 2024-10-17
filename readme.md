@@ -1,16 +1,12 @@
-# Three.js Journey
+# Art ⎯ stuffs.
 
-## Setup
-Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
+> Collection of some shader experiments I made to learn three.js and GLSL.
 
-``` bash
-# Install dependencies (only the first time)
-npm install
+---
 
-# Run the local server at localhost:8080
-npm run dev
+<!-- Images -->
 
-# Build for production in the dist/ directory
-npm run build
-```
+<img src="./static/readme/spiral.png" alt="spiral" width="50%"><img src="./static/readme/tunnel.png" alt="tunnel" width="50%">
+<img src="./static/readme/tiles.png" alt="tiles" width="50%"><img src="./static/readme/cube.png" alt="cube" width="50%">
+
+---

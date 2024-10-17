@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../static/icons/main.svg"
+      type="image/svg+xml"
+    />
     <title>Art ⎯ stuffs.</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,13 +16,25 @@
     <div
       class="w-full h-dvh flex flex-col gap-10 items-center justify-center text-center"
     >
-      <h1 class="text-2xl font-semibold text-center">Art ⎯ stuffs.</h1>
-      <div class="flex flex-col gap-2 justify-center items-center text-center">
-        <a href="./art-spiral.html">Spiral</a>
-        <a href="./art-tunnel.html">Tunnel</a>
-        <a href="./art-tiles.html">Tiles</a>
-        <a href="./art-cube.html">Cube</a>
+      <h1 class="title text-2xl font-semibold text-center">Art ⎯ stuffs.</h1>
+      <div
+        class="links flex flex-col gap-2 justify-center items-center text-center"
+      >
+        <a class="hover:opacity-50 transition-100" href="./art-spiral.html"
+          >Spiral</a
+        >
+        <a class="hover:opacity-50 transition-100" href="./art-tunnel.html"
+          >Tunnel</a
+        >
+        <a class="hover:opacity-50 transition-100" href="./art-tiles.html"
+          >Tiles</a
+        >
+        <a class="hover:opacity-50 transition-100" href="./art-cube.html"
+          >Cube</a
+        >
       </div>
     </div>
+
+    <script type="module" src="index.js"></script>
   </body>
 </html>
